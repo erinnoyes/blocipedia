@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users
-  get 'welcome/index'
+  resources :wikis
 
-  get 'welcome/about'
+  devise_for :users
+
+  get 'about' => 'welcome#about'
 
   root 'welcome#index'
 
@@ -10,6 +11,6 @@ Rails.application.routes.draw do
     member do
       get :unconfirmed_email
     end
-  end 
+  end
 
 end
