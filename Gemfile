@@ -50,3 +50,5 @@ group :development, :test do
  gem 'devise'
 
  gem 'dotenv-rails'
+
+ gem 'pundit'
