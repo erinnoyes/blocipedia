@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'users/downgrade'
+
+  get 'users/show'
+
+  get 'downgrade/show'
+
   resources :wikis
 
   devise_for :users
