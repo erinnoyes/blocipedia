@@ -1,0 +1,19 @@
+<div class="role">
+  <%= current_user.email %> - <%= current_user.role %> member
+</div>
+
+<h3>Wiki's You Created!</h3>
+<div class="row">
+  <div class="col-md-8">
+    <% @wikis.each do |wiki| %>
+    <div class="media">
+      <div class="media-body">
+        <h4 class="media-heading">
+          <%= link_to wiki.title, wiki %>
+        </h4>
+      </div>
+    </div>
+    <% end %>
+  </div>
+
+<%= link_to "Edit Account", edit_user_registration_path, class: 'btn btn-info' %>
