@@ -1,9 +1,10 @@
 module WikisHelper
-  def wiki_is_private_and_user_has_access(wiki)
-    wiki.private? && (current_user == wiki.user || current_user.admin?)
+
+  def users_wiki_is_private(wiki)
+    current_user && (current_user.admin || current_user.premium?)
   end
 
   def wiki_is_public(wiki)
-    !wiki.private? 
+    !wiki.private?
   end
 end

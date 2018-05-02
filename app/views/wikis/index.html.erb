@@ -3,7 +3,7 @@
   <%= link_to "Create New Wiki", new_wiki_path, class: 'btn btn-success' %>
   </div>
   <% @wikis.each do |wiki| %>
-    <% if wiki_is_private_and_user_has_access(wiki) || wiki_is_public(wiki)  %>
+    <% if users_wiki_is_private(wiki) || wiki_is_public(wiki)  %>
       <div class="col-md-8">
         <div class="form-group">
           <h3> <%= link_to wiki.title, wiki_path(wiki)  %> </h3>

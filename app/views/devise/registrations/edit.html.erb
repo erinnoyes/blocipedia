@@ -57,7 +57,7 @@
         <% end %>
 
         <% if current_user.premium? %>
-          <%= link_to "Cancel Premium Membership", users_downgrade_path, class: 'btn btn-info' %>
+          <%= link_to "Cancel Premium Membership", users_downgrade_path, data: { confirm: 'Your private wikis will all become public when you downgrade. Would you like to continue?'}, class: 'btn btn-info' %>
         <% end %>
 
 

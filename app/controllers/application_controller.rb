@@ -17,6 +17,6 @@ class ApplicationController < ActionController::Base
       current_user.wikis.each do |wiki|
         wiki.update_attribute(:private, false)
       end
-    end 
+    end
 
 end
