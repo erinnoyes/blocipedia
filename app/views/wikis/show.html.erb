@@ -2,11 +2,11 @@
   <div class="row">
   <div class="col-md-8">
     <div class="form-group">
-      <h3> <%= @wiki.title %> </h3>
+      <h3> <%= markdown(@wiki.title) %> </h3>
       <h5> created by: <%= @wiki.user.email %> </h5>
     </div>
     <div class="form-group">
-      <%= @wiki.body %>
+      <%= markdown(@wiki.body) %>
     </div>
     <%= link_to "Edit Wiki", edit_wiki_path(@wiki) %>
   </div>
