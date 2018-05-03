@@ -13,10 +13,4 @@ class ApplicationController < ActionController::Base
       redirect_to(request.referrer || root_path)
     end
 
-    def revert_users_wikis_to_public
-      current_user.wikis.each do |wiki|
-        wiki.update_attribute(:private, false)
-      end
-    end
-
 end
