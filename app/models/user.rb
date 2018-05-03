@@ -16,8 +16,4 @@ class User < ApplicationRecord
     self.role ||= :standard
   end
 
-  def make_wikis_public
-    current_user.wikis.update_all(private: false)
-  end
-
 end
