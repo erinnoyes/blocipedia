@@ -10,10 +10,10 @@ class User < ApplicationRecord
 
   after_initialize :init
 
+  enum role: [:admin, :standard, :premium]
+
   def init
     self.role ||= :standard
   end
-
-  enum role: [:admin, :standard, :premium]
 
 end

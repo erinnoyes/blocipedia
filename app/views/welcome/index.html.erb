@@ -2,8 +2,8 @@
   <h1>Blocipedia</h1>
   <p>
     <% if user_signed_in? %>
-      <% if current_user.standard? %>
-          Click <%= link_to 'Here', new_charge_path, class: "btn btn-primary"%> to upgrade to Premium Member Status! 
+      <% unless current_user.admin? || current_user.premium?  %>
+          Click <%= link_to 'Here', new_charge_path, class: "btn btn-primary"%> to upgrade to Premium Member Status!
       <% end %>
     <% else %>
       <%= link_to "Sign Up", new_user_registration_path, class: 'btn btn-primary' %> today!

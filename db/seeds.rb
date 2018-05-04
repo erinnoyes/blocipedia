@@ -1,17 +1,17 @@
 require 'faker'
 
-User.create!(
+admin = User.create!(
   email: 'admin@admin.com',
   password: 'password',
   role: :admin
 )
 
-User.create!(
+standard = User.create!(
   email: 'standard@standard.com',
   password: 'password',
 )
 
-User.create!(
+premium = User.create!(
   email: 'premium@premium.com',
   password: 'password',
   role: :premium
