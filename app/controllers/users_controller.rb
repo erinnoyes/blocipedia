@@ -1,9 +1,11 @@
 class UsersController < ApplicationController
   def downgrade
-    @user = current_user
-    current_user.update_attribute(:role, 'standard')
-
-    flash[:notice] = "Your account has been downgraded. You are now a Standard member."
+    if current_user.standard!
+      current_user.wikis.update_all(private: false)
+      flash[:notice] = "Your account has been downgraded. You are now a Standard member."
+    else
+      flash[:notice] = "Something went wrong. Please try again."
+    end
     redirect_to users_show_path
   end
 
