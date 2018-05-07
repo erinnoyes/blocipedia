@@ -12,14 +12,14 @@
       <%= f.text_area :body, class: 'form-control' %>
     </div>
 
-<% if current_user.admin? || current_user.premium? %>
-    <div class="form-group">
-      <%= f.label :private %>
-      <%= f.check_box :private %>
+    <div class="col-md-8">
+      <%= render partial: 'form', locals: { wiki: @wiki } %>
+      <%= render 'collaborators/form', collaborator: Collaborator.new, wiki: @wiki %>
     </div>
-<% end %>
+    
       <%= link_to "Delete", wiki_path(@wiki), method: 'delete', data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
       <%= f.submit "Save", class: 'btn btn-success' %>
+
     <% end %>
 
   </div>

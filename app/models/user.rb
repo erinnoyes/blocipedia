@@ -5,8 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
   has_many :wikis
-
-  before_save { self.role ||= :standard }
+  has_many :collaborators
 
   after_initialize :init
 

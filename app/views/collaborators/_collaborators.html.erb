@@ -1,0 +1,6 @@
+<div class="media">
+  <div class="media-body">
+    <% collab_user = User.find_by(id: collaborator.user_id) %>
+    <strong><%= collab_user.username %></strong> <%= link_to "Delete Collaborator", wiki_collaborator_path(@wiki, collaborator), method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure you want to delete this collaborator?' } %>
+  </div>
+</div>
