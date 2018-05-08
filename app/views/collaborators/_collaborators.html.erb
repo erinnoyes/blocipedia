@@ -1,6 +1,22 @@
-<div class="media">
-  <div class="media-body">
-    <% collab_user = User.find_by(id: collaborator.user_id) %>
-    <strong><%= collab_user.username %></strong> <%= link_to "Delete Collaborator", wiki_collaborator_path(@wiki, collaborator), method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure you want to delete this collaborator?' } %>
+<div class="form-group">
+  <div class="col-md-4">
   </div>
+  <% if current_user.premium? || current_user.admin? %>
+  <div class="col-md-8">
+    <h4> Add Collaborators</h4>
+
+    <%= form_for [@wiki, Collaborator.new] do |c| %>
+      <%= email_field_tag :collaborator %>
+      <%= c.submit "Add Collaborator", class: 'btn btn-primary' %>
+    <% end %>
+
+    <h4> Current Collaborators </h4>
+
+    <% wiki.collaborators.each do |c| %>
+      <% user = User.find(c.user_id) %>
+      <%= user.email %>
+      <%= link_to "Delete", wiki_collaborator_path(@wiki, c), class: 'btn btn-danger', method: :delete %>
+      <% end %>
+    </div>
+  <% end %>
 </div>

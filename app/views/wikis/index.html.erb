@@ -1,19 +1,15 @@
-<div class="container">
-  <div class="col-md-4">
-  <%= link_to "Create New Wiki", new_wiki_path, class: 'btn btn-success' %>
+<h1> Wikis</h1>
+<div class="row">
+<% @wikis.each do |wiki| %>
+  <div class="media">
+    <div class="media-body">
+      <h4 class="media-heading">
+        <%=link_to wiki.title, wiki %>
+      </h4>
   </div>
-  <% @wikis.each do |wiki| %>
-    <% if users_wiki_is_private(wiki) || wiki_is_public(wiki)  %>
-      <div class="col-md-8">
-        <div class="form-group">
-          <h3> <%= link_to markdown(wiki.title), wiki_path(wiki)  %> </h3>
-          <h5> created by: <%= wiki.user.email %> </h5>
-        </div>
-        <div class="form-group">
-          <%= markdown(wiki.body) %>
-        </div>
-        <%= link_to "Edit Wiki", edit_wiki_path(wiki) %>
-      </div>
-    <% end %>
-  <% end %>
+<% end %>
+
+  <div class="col-md-4">
+    <%= link_to "New Wiki", new_wiki_path, class: 'btn btn-success' %>
+  </div>
 </div>
