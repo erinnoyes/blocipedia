@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :wikis
   has_many :collaborators
+  has_many :collab_wikis, source: :wiki, through: :collaborators
 
   after_initialize :init
 
