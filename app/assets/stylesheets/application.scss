@@ -18,7 +18,7 @@
  @import "bootstrap";
 
 .jumbotron {
-  font-family: allerta;
+  font-family: Comic Sans MS;
   text-align: center;
   border: 3px black;
   background-color: #707070;
@@ -37,7 +37,12 @@
 }
 
 .nav-tabs {
-  font-size: 15px;
+  font-family: Comic Sans MS;
+  font-size: 25px;
   margin-top: 15px;
   margin-bottom: 10px;
+}
+
+p:first-child {
+  font-family: Comic Sans MS;
 }
