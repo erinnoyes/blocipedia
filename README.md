@@ -1,10 +1,10 @@
-# Simpsonspedia is a wiki clone intended to allow users to collaborate on Simpsons "WikiQuotes".  
-### created by Erin Noyes with Ruby on Rails
+## Simpsonspedia is a wiki clone intended to allow users to collaborate on Simpsons "WikiQuotes".  
+#### created by Erin Noyes with Ruby on Rails
 
-## You can find the production site here:  [Simpsonspedia](https://simpsonspedia.herokuapp.com/)
+### You can find the production site here:  [Simpsonspedia](https://simpsonspedia.herokuapp.com/)
 
 ## Simpsonspedia Features
->* User Sign In created with **Devise**
+* User Sign In created with **Devise**
 * Sign Up confirmation utilizes **Sendgrid**
 * Payments accepted with **Stripe** to upgrade accounts
 * Use Markdown (**RedCarpet**) to create and edit posts
