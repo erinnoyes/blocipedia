@@ -1,5 +1,5 @@
-# Simpsonspedia is a wiki clone intended to allow users to collaborate on Simpsons Quotes.  
-### created by Erin Noyes with Ruby on Rails 
+# Simpsonspedia is a wiki clone intended to allow users to collaborate on Simpsons "WikiQuotes".  
+### created by Erin Noyes with Ruby on Rails
 
 ## You can find the production site here:  [Simpsonspedia](https://simpsonspedia.herokuapp.com/)
 
